@@ -1,0 +1,134 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8895c749b3.js"></script>
+    
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+
+    {% if title %}
+    <title>Django - {{ title }}</title>
+    {% else %}
+    <title>Django Home</title>
+    {% endif %}
+</head>
+
+<body style="display: flex; min-height: 100vh; flex-direction: column">
+    <header>
+        <!-- NAVBAR AND SIDENAV -->
+        <div class="navbar-fixed">
+            <!-- Navbar block -->
+            <nav>
+                <!-- Navbar lists Container -->
+                <div class="container">
+                    <div class="nav-wrapper">
+                        <a href="{% url 'blog-home' %}" class="brand-logo left">ACCESS</a>
+                        <a href="#" data-target="mobile-nav" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+                        <ul class="hide-on-med-and-down right">
+                            <li><a href="{% url 'blog-home' %}">Home</a></li>
+                            <li><a href="{% url 'blog-about' %}">About</a></li>
+                            {% if user.is_authenticated %}
+                            <li><a href="{% url 'profile' %}">Profile</a></li>
+                            <li><a href="{% url 'post-create' %}">New Post</a></li>
+                            <li><a href="{% url 'logout' %}">Logout</a></li>
+                            {% else %}
+                            <li><a href="{% url 'login' %}">Login</a></li>
+                            <li><a href="{% url 'register' %}">Register</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Mobile NavBar Section -- Menu Icon -->
+        <ul class="sidenav" id="mobile-nav">
+            <li><a href="{% url 'blog-home' %}">Home</a></li>
+            <li><a href="{% url 'blog-about' %}">About</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'profile' %}">Profile</a></li>
+            <li><a href="{% url 'post-create' %}">New Post</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
+            {% endif %}
+            <li><a href="/admin">Admin</a></li>
+        </ul>
+
+        <!-- END OF NAVBAR AND SIDENAV -->
+    </header>
+
+    <main style="flex: 1 0 auto">
+        <!-- SECTION: COLLECTION - Latest posts, announcement, calenders, etc -->
+        <section class="section-collection">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m8">
+                        {% if messages %}
+                        {% for message in messages %}
+                        <div>
+                            {{ message }}
+                        </div>
+                        {% endfor %}
+                        {% endif %}
+                        {% block content %} {% endblock %}
+                    </div>
+                    <div class="col s12 m4" style="margin-top: 20px">
+                        <ul class="collection with-header card">
+                            <li class="collection-item">
+                                <h4>Updates</h4>
+                            </li>
+                            <li class="collection-item"><a class="black-text" href="">Latest Posts</a></li>
+                            <li class="collection-item"><a class="black-text" href="">Announcements</a></li>
+                            <li class="collection-item"><a class="black-text" href="">Recent Employments</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="section page-footer darken-2 white-text center" style="background: #ee6e73;  margin-top: 100px;">
+        <div class="row">
+            <div class="col s12 m7">
+                <h3>ACCESS</h3>
+                <p>This is community that give graduates opportunities to get jobs faster and easier.</p>
+                <p>Access provide easy access of all kinds of jobs from all kinds of companies all over Nigeria</p>
+                <p>Companies surf through ACCESS to find employees that suite their needs</p>
+            </div>
+            <div class="col s12 m5">
+                <h3>Get in Touch</h3>
+                <p>contact@access.com</p>
+                <p>Contact@accessacess@gmail.com</p>
+                <p>+234 90 380 764 10</p>
+            </div>
+        </div>
+
+        <div class="" style="border-top: 1px solid white">
+            <p class="flow-text" style="margin-bottom: 0">Powered by ACCESS &copy; 2019</p>
+            <p style="margin-top: 0">Designer: Playestcodes</p>
+        </div>
+    </footer>
+
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        $('.sidenav').sidenav();
+    </script>
+</body>
+
+</html>

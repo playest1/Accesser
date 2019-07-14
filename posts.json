@@ -1,0 +1,57 @@
+[
+    {
+        "title": "My Updated Post",
+        "content": "My first updated Post!\r\n\r\nThis is exciting!",
+        "user_id": 1
+    },
+    {
+        "title": "My Second Post Swanky",
+        "content": "This is a post from a different user.....! Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque optio pariatur alias excepturi deleniti, quasi quia, repudiandae neque totam fuga obcaecati laudantium nam mollitia officia! Fugiat ducimus asperiores et laudantium?",
+        "user_id": 1
+    },
+    {
+        "title": "Top 5 Programming Language",
+        "content": "This post is going to be talking about most important programming languages!",
+        "user_id": 1
+    },
+    {
+        "title": "Visual Studio Tips and Tricks",
+        "content": "This post is about Visual Studio Tips and Tricks  Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque optio pariatur alias excepturi deleniti, quasi quia, repudiandae neque totam fuga obcaecati laudantium nam mollitia officia! Fugiat ducimus asperiores et laudantium?" ,
+        "user_id": 1
+    },
+    {
+        "title": "Sublime Text Tips and Tricks",
+        "content": "This post is about Sublime Text Tips and Tricks Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque optio pariatur alias excepturi deleniti, quasi quia, repudiandae nequ",
+        "user_id": 1
+    },
+    {
+        "title": "My Updated Post",
+        "content": "My first updated Post!\r\n\r\nThis is exciting!",
+        "user_id": 1
+    },
+    {
+        "title": "My Updated Post",
+        "content": "My first updated Post!\r\n\r\nThis is exciting!",
+        "user_id": 1
+    },
+    {
+        "title": "My Updated Post",
+        "content": "My first updated Post!\r\n\r\nThis is exciting!",
+        "user_id": 1
+    },
+    {
+        "title": "You won't believe this clickbait",
+        "content": "This post is basically based on You won't believe this clickbait",
+        "user_id": 1
+    },
+    {
+        "title": "My Updated Post",
+        "content": "My first updated Post!\r\n\r\nThis is exciting!",
+        "user_id": 1
+    },
+    {
+        "title": "My Updated Post",
+        "content": "My first updated Post!\r\n\r\nThis is exciting!",
+        "user_id": 1
+    }
+]

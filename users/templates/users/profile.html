@@ -1,0 +1,36 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="row valign-wrapper">
+</div>
+<div class="col s12">
+  <div class="card-panel grey lighten-5 z-depth-1">
+    <div class="row valign-wrapper">
+      <div class="col s5">
+        <img src="{{ user.profile.image.url }}" style="height: 150px; width: 150px" class="circle responsive-img">
+      </div>
+      <div class="col s7">
+        <span class="black-text">
+          <h4>{{ user.username }}</h4>
+          <p>{{ user.email }}</p>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <fieldset>
+        <legend>Profile Info</legend>
+        {{ u_form|crispy }}
+        {{ p_form|crispy }}
+      </fieldset>
+      <div>
+        <button class="btn" style="background-color: #ee6e73;" type="submit">Update</button>
+      </div>
+    </form>
+  </div>
+
+</div>
+{% endblock content %}

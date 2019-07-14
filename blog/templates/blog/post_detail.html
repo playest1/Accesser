@@ -1,0 +1,16 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<div class="card-panel" style="margin-top: 20px">
+    <img src="{{ object.author.profile.image.url }}" class="circle responsive-img" style="height: 50px; width: 50px">
+    <p style="padding: 0; margin-bottom: 0; color: gray"><span><a style="color: #ee6e73" href="{% url 'user-posts' object.author.username %}">{{object.author}}</a></span>
+        {{object.date_posted|date:"F d, Y"}}</p>
+    {% if object.author == user %}
+    <div>
+        <a class="btn" href="{% url 'post-update' object.id %}">Update</a>
+        <a class="btn red" href="{% url 'post-delete' object.id %}">Delete</a>
+    </div>
+    {% endif %}
+    <h5 style="padding: 0; margin: 0">{{object.title}}</h5>
+    <p style="padding: 0; margin-top: 0"> {{object.content}}</p>
+</div>
+{% endblock content %}
