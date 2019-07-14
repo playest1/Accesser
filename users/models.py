@@ -6,7 +6,6 @@ from PIL import Image
 class Profession(models.Model):
     name = models.CharField(max_length=30)
     
-
     class Meta:
         verbose_name = "Profession"
         verbose_name_plural = "Professions"

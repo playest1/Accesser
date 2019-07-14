@@ -1,0 +1,10 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div>
+    <h4>{{profession}}s</h4>
+    {% for profile in profession.profiles.all %}
+        <p>{{profile.user.username}}</p>
+    {% endfor %}
+</div>
+{% endblock content %}

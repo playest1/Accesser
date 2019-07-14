@@ -3,12 +3,13 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post
+from users.models import Profession
 
 
 # function
 def home(request):
     context = {
-        'posts': Post.objects.all()
+        'posts': Post.objects.all(),
     }
     return render(request, 'blog/home.html', context)
 
@@ -20,6 +21,11 @@ class PostListView(ListView):
     ordering = ['-date_posted']
     paginate_by = 5
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["professions"] = Profession.objects.all()
+        return context
+    
 
 class UserPostListView(ListView):
     model = Post

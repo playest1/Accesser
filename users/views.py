@@ -1,7 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
+from .models import Profession
 
 # Create your views here.
 def register(request):
@@ -40,7 +41,10 @@ def profile(request):
     return render(request, 'users/profile.html', context)
 
 
-
+def users_by_profession(request, profession):
+    profession = get_object_or_404(Profession, name=profession)
+    context = {"profession":profession}
+    return render(request, 'users/user_profession.html',context)
 # messages.debug
 # messages.info
 # messages.success
