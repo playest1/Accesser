@@ -1,4 +1,27 @@
 body {
     box-sizing: border-box;
-    /* background: rgb(216, 16, 16); */
+    margin-top: 5rem;
 }
+
+.navbar-collapse.collapsing,
+.navbar-collapse.show {
+    padding-top: 30px;
+    background: #ee6e73;
+    padding: 20px;
+}
+
+ul {
+    margin: 0;
+  }
+  
+  .site-header .navbar-nav .nav-link {
+    color: #cbd5db;
+  }
+  
+  .site-header .navbar-nav .nav-link:hover {
+    color: #ffffff;
+  }
+  
+  .site-header .navbar-nav .nav-link.active {
+    font-weight: 500;
+  }
