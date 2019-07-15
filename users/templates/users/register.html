@@ -6,7 +6,8 @@
         {% csrf_token %}
         <fieldset>
          <legend>Join Today</legend> 
-         {{ form|crispy }}  
+         {{ u_form|crispy }}
+         {{ p_form|crispy }}  
         </fieldset>
         <div>
             <button class="btn" style="background-color: #ee6e73;" type="submit">Sign Up</button>
