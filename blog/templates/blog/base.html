@@ -13,7 +13,7 @@
     <script src="https://kit.fontawesome.com/8895c749b3.js"></script>
 
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
     <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,7 +31,7 @@
     <header class="site-header">
         <nav style="background-color: #ee6e73" class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
             <div class="container">
-                <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">ACCESS</a>
+                <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">ACCESSER</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
                     aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -57,7 +57,7 @@
         </nav>
     </header>
 
-    <main role="main" class="container" style="flex: 1 0 auto">
+    <main role="main" class="container mb-5" style="flex: 1 0 auto">
         <div class="row">
             <div class="col-md-8">
                 {% if messages %}
@@ -73,9 +73,9 @@
             <div class="col-md-4">
                 <div class="content-section">
                     <h4>Professions</h4>
-                    <ul class="collection with-header card">
+                    <ul class="list-group">
                         {% for profession in professions %}
-                        <li class="list-group-item list-group-item-light"><a class="black-text" href="{% url 'user-profession' profession %}">
+                        <li class="list-group-item list-group-item-light"><a class="text-dark" href="{% url 'user-profession' profession %}">
                                 {{profession}}s</a></li>
                         {% endfor %}
                     </ul>
@@ -88,33 +88,161 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="section page-footer darken-2 white-text center" style="background: #ee6e73;  margin-top: 100px;">
-        <div class="row">
-            <div class="col s12 m7">
-                <h3>ACCESS</h3>
-                <p>This is community that give graduates opportunities to get jobs faster and easier.</p>
-                <p>Access provide easy access of all kinds of jobs from all kinds of companies all over Nigeria</p>
-                <p>Companies surf through ACCESS to find employees that suite their needs</p>
-            </div>
-            <div class="col s12 m5">
-                <h3>Get in Touch</h3>
-                <p>contact@access.com</p>
-                <p>Contact@accessacess@gmail.com</p>
-                <p>+234 90 380 764 10</p>
+    <!-- ---------------------------------------Footer--------------------------------------------- -->
+
+    <footer class="page-footer blue-grey bg-light mt-5  lighten-5">
+
+        <div style="background-color: #ee6e73;">
+            <div class="container">
+
+                <!-- Grid row-->
+                <div class="row py-4 d-flex align-items-center text-white">
+
+                    <!-- Grid column -->
+                    <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                        <h6 class="mb-0">Get connected with us on social networks!</h6>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+                        <!-- Facebook -->
+                        <a class="fb-ic" href="#">
+                            <i class="fab fa-facebook-f text-white mr-4"> </i>
+                        </a>
+                        <!-- Twitter -->
+                        <a class="tw-ic" href="#">
+                            <i class="fab fa-twitter text-white mr-4"> </i>
+                        </a>
+                        <!-- Google +-->
+                        <a class="gplus-ic" href="#">
+                            <i class="fab fa-google-plus-g text-white mr-4"> </i>
+                        </a>
+                        <!--Linkedin -->
+                        <a class="li-ic" href="#">
+                            <i class="fab fa-linkedin-in text-white mr-4"> </i>
+                        </a>
+                        <!--Instagram-->
+                        <a class="ins-ic" href="#">
+                            <i class="fab fa-instagram text-white"> </i>
+                        </a>
+
+                    </div>
+                    <!-- Grid column -->
+
+                </div>
+                <!-- Grid row-->
+
             </div>
         </div>
 
-        <div class="" style="border-top: 1px solid white">
-            <p class="flow-text" style="margin-bottom: 0">Powered by ACCESS &copy; 2019</p>
-            <p style="margin-top: 0">Designer: Playestcodes</p>
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left mt-5 small">
+
+            <!-- Grid row -->
+            <div class="row mt-3 dark-grey-text">
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+
+                    <!-- Content -->
+                    <h6 class="text-uppercase font-weight-bolder lead" style="color: #ee6e73; font-size: 2em">ACCESSER</h6>
+                    <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>This is community that give graduates opportunities to get jobs faster and easier.</p>
+                    <!-- <p>Access provide easy access of all kinds of jobs from all kinds of companies all over Nigeria</p> -->
+                    <p>Companies surf through ACCESS to find employees that suite their needs</p>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 text-secondary">
+
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">Products</h6>
+                    <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <a class="text-secondary" href="#!">Shop</a>
+                    </p>
+                    <p>
+                        <a class="text-secondary" href="#!">Bootcamps</a>
+                    </p>
+                    <p>
+                        <a class="text-secondary" href="#!">Books</a>
+                    </p>
+                    <p>
+                        <a class="text-secondary" href="#!">Vocations</a>
+                    </p>
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 text-secondary">
+
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+                    <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <a class="text-secondary" href="#!">Your Account</a>
+                    </p>
+                    <p>
+                        <a class="text-secondary" href="#!">Become an Affiliate</a>
+                    </p>
+                    <p>
+                        <a class="text-secondary" href="#!">Privacy Policy</a>
+                    </p>
+                    <p>
+                        <a class="text-secondary" href="#!">Help</a>
+                    </p>
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 text-secondary">
+
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                    <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <i class="fas fa-home mr-3"></i> B. City, Edo State 300251, NG</p>
+                    <p>
+                        <i class="fas fa-envelope mr-3"></i> info@accesser.com</p>
+                    <p>
+                        <i class="fas fa-phone mr-3"></i> + 234 234 567 88</p>
+                    <p>
+                        <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
         </div>
+        <!-- Footer Links -->
+
+        <!-- Call to action -->
+        <ul class="list-unstyled list-inline text-center py-2 mb-4">
+            <li class="list-inline-item">
+                <h6>Register Now</h6>
+            </li>
+            <li class="list-inline-item">
+                <a href="#!" class="btn btn-outline-dark">Sign up!</a>
+            </li>
+        </ul>
+        <!-- Call to action -->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center bg-secondary text-white py-3 lighten-4"> Powered by ACCESSER © 2019
+            <br> Designer: <a class="text-white" href="#!">Playestcodes</a></div>
+        <!-- Copyright -->
+
     </footer>
 
+     <!-- ---------------------------------------Footer--------------------------------------------- -->
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <!-- Bootstrap Js -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -124,11 +252,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <!-- / Bootstrap Js -->
-
-
-    <script>
-        $('.sidenav').sidenav();
-    </script>
 </body>
 
 </html>

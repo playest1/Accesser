@@ -57,8 +57,4 @@ def users_by_profession(request, profession):
     profession = get_object_or_404(Profession, name=profession)
     context = {"profession":profession}
     return render(request, 'users/user_profession.html',context)
-# messages.debug
-# messages.info
-# messages.success
-# messages.warning
-# messages.error
+    
