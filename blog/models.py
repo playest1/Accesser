@@ -15,14 +15,3 @@ class Post(models.Model):
  def get_absolute_url(self):
      return reverse('post-detail', kwargs={'pk': self.pk})
 
-
-class School(models.Model):
-    SCHOOL_NAMES = (
-        ('F', 'FUPRE'),
-        ('U', 'UNIBEN'),
-        ('P', 'UNIPORT'),
-    )
-    # user = models.ForeignKey(User, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, default="", on_delete=models.CASCADE)
-    school_name = models.CharField(max_length=1, choices=SCHOOL_NAMES)
-

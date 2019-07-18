@@ -3,6 +3,8 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 from .models import Profession
+from django.views.generic import DetailView
+from .models import User
 
 # Create your views here.
 def register(request):
@@ -57,4 +59,8 @@ def users_by_profession(request, profession):
     profession = get_object_or_404(Profession, name=profession)
     context = {"profession":profession}
     return render(request, 'users/user_profession.html',context)
-    
+
+
+class UserDetailView(DetailView):
+    model = User
+    template_name = 'users/user_details.html'
