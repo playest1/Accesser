@@ -1,7 +1,10 @@
 {% extends "blog/base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
+
     <div class="content-section">
-     <h1>USER DETAILS</h1>
+     <h1>{{ user }}'s Details</h1>
+     <img src="{{ user.profile.image.url }}" style="max-width:100%"/> 
+     <h4>Profession : {{ user.profile.profession }}</h4>
     </div>
 {% endblock content %}

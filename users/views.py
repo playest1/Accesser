@@ -64,3 +64,4 @@ def users_by_profession(request, profession):
 class UserDetailView(DetailView):
     model = User
     template_name = 'users/user_details.html'
+    context_object_name = "user"
