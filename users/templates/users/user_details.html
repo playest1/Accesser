@@ -1,10 +1,23 @@
 {% extends "blog/base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-
-    <div class="content-section">
-     <h1>{{ user }}'s Details</h1>
-     <img src="{{ user.profile.image.url }}" style="max-width:100%"/> 
-     <h4>Profession : {{ user.profile.profession }}</h4>
+<div class="content-section">
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <h3>{{ user }}'s Profile</h3>
+            <img src="{{ user.profile.image.url }}" style="max-width:100%" />
+            <h4>Profession : {{ user.profile.profession }}</h4>
+            <h6><i class="fas fa-phone-alt mr-3"></i> +234 {{ user.profile.phone_number }} </h6>
+            <h6><i class="fas fa-envelope mr-3"></i> {{ user.email }} </h6>
+        </div>
+        <div class="col-md-6 mt-5">
+            <h5><span class="text-muted">Name:</span> {{ user.profile.first_name }} {{ user.profile.last_name }}</h5>
+            <h5><span class="text-muted">University:</span> {{ user.profile.university }}<h5>
+            <h5><span class="text-muted">Course:</span> {{ user.profile.course }}</h5>
+            <h5><span class="text-muted">Country:</span> {{ user.profile.country }}</h5>
+            <h5><span class="text-muted">City:</span> {{ user.profile.city }}</h5>
+            <h5><span class="text-muted">State:</span>  {{ user.profile.state }}</h5>
+            <h5><span class="text-muted">Age:</span>  {{ user.profile.age }}</h5>
+        </div>
     </div>
-{% endblock content %}
+    {% endblock content %}
