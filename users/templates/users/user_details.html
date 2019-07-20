@@ -20,4 +20,22 @@
             <h5><span class="text-muted">Age:</span>  {{ user.profile.age }}</h5>
         </div>
     </div>
+        <div class="row my-5">
+            <h1>Posts by {{ user.profile.first_name }}</h1>
+            {% for post in user.posts.all %}
+                <div class="col-md-12 my-3">
+                    <article class="media content-section">
+                    <img class="rounded-circle article-img" src="{{ user.profile.image.url }}">
+                    <div class="media-body">
+                        <div class="article-metadata">
+                        <a class="mr-2" href="{% url 'user-posts' user.username %}" style="color: #ee6e73">{{ post.author }}</a>
+                        <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+                        </div>
+                        <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+                        <p class="article-content">{{ post.content }}</p>
+                    </div>
+                    </article>
+                </div>
+            {% endfor %}
+        </div
     {% endblock content %}

@@ -5,8 +5,10 @@
           <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
           <div class="media-body">
             <div class="article-metadata">
-              <a class="mr-2" href="{% url 'user-posts' post.author.username %}" style="color: #ee6e73">{{ post.author }}</a>
+              <a class="mr-1" href="{% url 'user-posts' post.author.username %}" style="color: #ee6e73">
+              {{ post.author }}</a>
               <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+              <span class="text-muted mr-1 float-right">{% if post.author.is_superuser %}<small> Admin </small>{% endif %}</span>
             </div>
             <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
             <p class="article-content">{{ post.content }}</p>

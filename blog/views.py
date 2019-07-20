@@ -9,7 +9,7 @@ from users.models import Profession
 # function
 def home(request):
     context = {
-        'posts': Post.objects.all(),
+        'posts': Post.objects.filter(author__is_superuser = True),
     }
     return render(request, 'blog/home.html', context)
 
@@ -20,6 +20,11 @@ class PostListView(ListView):
     context_object_name = 'posts'
     ordering = ['-date_posted']
     paginate_by = 5
+
+
+    def get_queryset(self):
+        return super().get_queryset().filter(author__is_superuser = True)
+
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
